@@ -1,0 +1,39 @@
+{
+  "name": "podcast-video-creator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c cyan,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "tsx watch --clear-screen=false server/index.ts",
+    "dev:web": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test shared/*.test.ts"
+  },
+  "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.75.0",
+    "@remotion/bundler": "^4.0.540",
+    "@remotion/player": "^4.0.540",
+    "@remotion/renderer": "^4.0.540",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.540"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "concurrently": "^10.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}
